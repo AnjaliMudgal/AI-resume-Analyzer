@@ -1,49 +1,145 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #ffffff;
+}
+
+
 .container {
-  max-width: 700px;
-  margin: 40px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 720px;
+  width: 90%;
+  padding: 35px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.8s ease;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  margin-bottom: 25px;
+  color: #e0f2f1;
+  letter-spacing: 1px;
 }
 
+h1 i {
+  color: #4caf50;
+  margin-right: 8px;
+}
+
+/* Textarea */
 textarea {
   width: 100%;
-  height: 120px;
-  margin: 10px 0;
-  padding: 10px;
+  height: 140px;
+  padding: 15px;
+  border-radius: 14px;
   resize: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
+textarea::placeholder {
+  color: #cfd8dc;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.6);
+}
+
+/* Button */
 button {
+  margin-top: 20px;
   width: 100%;
-  padding: 12px;
-  background: #4CAF50;
-  color: white;
-  font-size: 16px;
+  padding: 15px;
+  border-radius: 14px;
+  font-size: 17px;
   border: none;
   cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  transition: all 0.3s ease;
+}
+
+button i {
+  margin-right: 8px;
 }
 
 button:hover {
-  background: #43a047;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.6);
 }
 
+button:active {
+  transform: scale(0.97);
+}
+
+/* Result box */
 .result {
-  margin-top: 20px;
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  border-left: 5px solid #4caf50;
+  animation: slideUp 0.6s ease;
 }
 
-span {
-  color: #4CAF50;
-  font-weight: bold;
+.result p {
+  font-size: 18px;
 }
+
+/* Animated result text */
+.result span {
+  color: #69f0ae;
+  font-weight: bold;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(105, 240, 174, 0.4);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(105, 240, 174, 0.9);
+  }
+}
+
+  
